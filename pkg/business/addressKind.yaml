@@ -1,0 +1,9 @@
+--- 
+AddressKind: # Type of address (Home|Office|PostalBox)
+  base: int 
+  marshal: true
+  items: 
+    - Unknown
+    - Home
+    - Office
+    - PostalBox
