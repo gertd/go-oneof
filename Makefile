@@ -47,7 +47,7 @@ ATTN_COLOR :=\033[33;01m
 all: build test lint
 
 deps:
-	@echo -e "$(ATTN_COLOR)==> download dependencies $(NO_COLOR)"2
+	@echo -e "$(ATTN_COLOR)==> download dependencies $(NO_COLOR)"
 	@go get -u github.com/gertd/gogen-enum
 	@GO111MODULE=on go mod download
 
@@ -96,6 +96,6 @@ clean:
 	@rm -rf $(REL_DIR)
 
 .PHONY: gen
-gen:
+gen: deps
 	@echo -e "$(ATTN_COLOR)==> generate $(NO_COLOR)"
 	@go generate ./pkg/business/generate.go
